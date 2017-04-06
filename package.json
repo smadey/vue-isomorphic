@@ -1,0 +1,46 @@
+{
+  "name": "vue-isomorphic",
+  "description": "A Vue.js project",
+  "author": "Smadey <zhangchengrong@yuewen.com>",
+  "private": true,
+  "scripts": {
+    "dev": "node server",
+    "start": "cross-env NODE_ENV=production node server",
+    "build:m": "rimraf dist/m && npm run build:m:client && npm run build:m:server",
+    "build:m:client": "cross-env NODE_ENV=production PLATFORM=m webpack --config build/webpack.client.config.js --progress --hide-modules",
+    "build:m:server": "cross-env NODE_ENV=production PLATFORM=m webpack --config build/webpack.server.config.js --progress --hide-modules",
+    "build:app": "rimraf dist/app && npm run build:app:client && npm run build:app:server",
+    "build:app:client": "cross-env NODE_ENV=production PLATFORM=app webpack --config build/webpack.client.config.js --progress --hide-modules",
+    "build:app:server": "cross-env NODE_ENV=production PLATFORM=app webpack --config build/webpack.server.config.js --progress --hide-modules"
+  },
+  "engines": {
+    "node": ">=6.0",
+    "npm": ">=3.0"
+  },
+  "dependencies": {
+    "cross-env": "^4.0.0",
+    "es6-promise": "^4.1.0",
+    "express": "^4.15.2",
+    "vue": "^2.2.6",
+    "vue-router": "^2.3.1",
+    "vue-server-renderer": "^2.2.6",
+    "vuex": "^2.2.1",
+    "vuex-router-sync": "^4.1.2"
+  },
+  "devDependencies": {
+    "buble": "^0.15.2",
+    "buble-loader": "^0.4.1",
+    "css-loader": "^0.28.0",
+    "html-webpack-plugin": "^2.28.0",
+    "memory-fs": "^0.4.1",
+    "rimraf": "^2.6.1",
+    "vue-loader": "^11.3.4",
+    "vue-ssr-webpack-plugin": "^2.1.0",
+    "vue-style-loader": "^2.0.5",
+    "vue-template-compiler": "^2.2.6",
+    "webpack": "^2.3.3",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-hot-middleware": "^2.18.0",
+    "webpack-merge": "^4.1.0"
+  }
+}
