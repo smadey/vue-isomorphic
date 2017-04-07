@@ -12,8 +12,8 @@ if (window.__INITIAL_STATE__) {
 router.onReady(() => {
   if (!document.getElementById('app')) {
     const app = document.createElement('div')
-    app.id = 'app';
-    document.body.appendChild(app);
+    app.id = 'app'
+    document.body.appendChild(app)
   }
 
   // actually mount to DOM
